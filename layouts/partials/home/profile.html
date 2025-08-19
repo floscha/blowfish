@@ -12,13 +12,10 @@
         {{ $authorImage = resources.Get . }}
       {{ end }}
       {{ if $authorImage }}
-        {{ if not $disableImageOptimization }}
-          {{ $authorImage = $authorImage.Fill (print "288x288 q" ( $.Site.Params.Author.imagequality | default "96" )) }}
-        {{ end }}
         <img
-          class="mb-2 rounded-full h-36 w-36"
-          width="144"
-          height="144"
+          class="mb-2"
+          width="244"
+          height="244"
           alt="{{ $.Site.Params.Author.name | default " Author" }}"
           src="{{ $authorImage.RelPermalink }}">
       {{ end }}
